@@ -1,8 +1,8 @@
+require("dotenv/config");
 const express = require("express");
 const { Project } = require("../models/project");
 const upload = require("../config/multer");
 const cloudinary = require("../config/cloudinary");
-require("dotenv/config");
 
 const router = express.Router();
 

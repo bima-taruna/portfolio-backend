@@ -1,10 +1,10 @@
+require("dotenv/config");
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv/config");
 mongoose.set("strictQuery", true);
 const authJwt = require("./config/jwt");
 const api = process.env.API_URL;
