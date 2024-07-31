@@ -65,8 +65,7 @@ router.put("/:id", async (req, res) => {
     let users = User.findById(req.params.id);
     let userData = {
       username: req.body.username || users.username,
-      passwordHash:
-        bcrypt.hashSync(req.body.passwordHash, 10) || users.passwordHash,
+      passwordHash: req.body.passwordHash || users.passwordHash,
       isAdmin: req.body.isAdmin || users.isAdmin,
     };
     users = await User.findByIdAndUpdate(req.params.id, userData, {
