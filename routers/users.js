@@ -81,7 +81,7 @@ router.put("/:id", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });
-    const secret = process.env.secret;
+    const secret = process.env.SECRET;
     if (!user) {
       res.status(400).send("user tidak ditemukan");
     }
